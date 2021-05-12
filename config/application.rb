@@ -19,3 +19,5 @@ module CooklogForNote
         helper_specs: false,
         routing_specs: false
     end
+  end
+end
