@@ -22,4 +22,3 @@ module CooklogForNote
     end
   end
 end
-  
