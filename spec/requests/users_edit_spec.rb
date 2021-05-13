@@ -13,7 +13,7 @@ RSpec.describe "プロフィール編集", type: :request do
       patch user_path(user), params: { user: { name: "Example User",
                                                email: "user@example.com",
                                                introduction: "初めまして",
-                                               gender: "男性" } }
+                                               gender: "女性" } }
       redirect_to user
       follow_redirect!
       expect(response).to render_template('users/show')

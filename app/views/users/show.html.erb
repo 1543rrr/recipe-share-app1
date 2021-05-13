@@ -11,23 +11,25 @@
             </div>
           </div>
           <div class="col-md-8">
-            <h4 class="show-user-name"><%= @user.name %></h4>　<%= @user.gender %>
+            <h4 class="show-user-name"><%= @user.name %></h4> <%= @user.gender %>
             <div class="show-user-introduction">
               <%= @user.introduction %>
             </div>
             <%# <section class="stats"> %>
-              <%# <%= render 'shared/stats' %> %>
+              <%# <%= render 'shared/stats' %>
             <%# </section> %>
             <% if current_user == @user %>
               <div class="account-edit"><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
             <% end %>
-            <%# <% if current_user.admin? || (current_user == @user) %> %>
-              <div class="account-delete"><%= link_to "アカウント削除", user_path(@user), method: :delete,
-                                            data: { confirm: "本当に削除しますか？" } %></div>
+            <% if current_user == @user %>
+              <div class="account-delete">
+                <%= link_to "アカウント削除", user_path(@user), method: :delete,
+                                            data: { confirm: "本当に削除しますか？" } %>
+              </div>
             <% end %>
-            <br>
-            <%# <%= render 'follow_form' if logged_in? %> %>
-          </div>
+            <%# <br> %>
+            <%# <%= render 'follow_form' if logged_in? %>
+          <%# </div> %>
         </div>
       </div>
     </div>
@@ -41,6 +43,7 @@
           <%= will_paginate @dishes %>
         <% end %>
       </div>
+    </div>
       <div class="col-md-3">
         <p><%= link_to "新しい料理を作る", new_dish_path, class: "btn btn-primary btn-lg btn-demo btn-record" %></p>
         <br>

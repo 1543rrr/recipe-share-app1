@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
   get 'sessions/new'
   get 'users/new'
   get 'users/show'
@@ -12,4 +13,7 @@ Rails.application.routes.draw do
   delete :logout,    to: 'sessions#destroy'
   resources :users do
   end
+  resources :dishes do
+  end
+  
 end
