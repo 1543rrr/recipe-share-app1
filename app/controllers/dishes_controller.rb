@@ -34,7 +34,7 @@ class DishesController < ApplicationController
       # Log.create(dish_id: @dish.id, content: @dish.cook_memo)
       redirect_to dishes_path
     else
-      flash[:error_messages] = dish.errors.full_messages
+      # flash[:error_messages] = dish.errors.full_messages
       render :new
       # render 'dishes/new'
     end
